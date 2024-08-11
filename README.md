@@ -46,18 +46,6 @@ Chunk Size: Customize how the document is split into chunks for processing.
 API Key: Enter your OpenAI API key in the sidebar to enable the application’s AI functionalities.
 Embeddings: The application uses OpenAI Embeddings for document processing.
 
-## Contributing
-Contributions are welcome! Please follow these steps to contribute:
-
-Fork the repository.
-Create a new feature branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature/your-feature).
-Create a Pull Request.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ## Acknowledgements
 OpenAI: For providing the GPT-4 model that powers the chatbot and document query functionalities.
 Streamlit: For the easy-to-use framework that made building this application a breeze.
