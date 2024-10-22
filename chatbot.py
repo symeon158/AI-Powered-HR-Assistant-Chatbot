@@ -218,23 +218,24 @@ def clear_history():
         del st.session_state['conversation_ended']
 
 # Updated Function to clear vector store
+# Updated Function to clear vector store
 def clear_vector_store():
     if f'{PAGE_KEY}_vs' in st.session_state:
         vector_store = st.session_state[f'{PAGE_KEY}_vs']
-        # Close the vector store client to release file handles
         try:
-            vector_store._client.close()
+            # Retrieve all IDs from the vector store
+            ids = vector_store.get()['ids']
+            # Delete all embeddings
+            vector_store.delete(ids=ids)
+            # Remove from session state
             del st.session_state[f'{PAGE_KEY}_vs']
-        except Exception as e:
-            st.error(f"Error closing vector store client: {e}")
-            return
-    if os.path.exists('vector_store'):
-        import shutil
-        try:
-            shutil.rmtree('vector_store')
             st.success('Vector store cleared. You can start a new session now.')
         except Exception as e:
             st.error(f"Error clearing vector store: {e}")
+    else:
+        st.info('No vector store found to clear.')
+
+
 
 # Function to ask question and get answer with conversational context
 def ask_and_get_answer(vector_store, question, k=3, model_name='gpt-4', temperature=0.7, max_tokens=1500):
@@ -285,6 +286,7 @@ def main():
     st.subheader('📂 Upload your documents and ask away. 💡 Quick insights from your ESG data are just a question away! ✨')
 
     with st.sidebar:
+        st.expander("Instructions").markdown(instructions)
         st.header("Settings")
 
         # API Key Input
@@ -376,7 +378,7 @@ def main():
 
                 vector_store = create_embeddings(all_chunks)
                 st.session_state[f'{PAGE_KEY}_vs'] = vector_store
-                st.success('Files processed and embeddings created successfully!')
+                st.sidebar.success('Files processed and embeddings created successfully!')
             else:
                 st.error('No valid documents were processed.')
 
@@ -454,5 +456,7 @@ def main():
 
     # Logo or Branding
     st.sidebar.image('https://aldom.gr/wp-content/uploads/2020/05/alumil.png', use_column_width=True)
+
+# Ensure the main function is called
 
 main()
