@@ -217,8 +217,8 @@ def clear_history():
     if 'conversation_ended' in st.session_state:
         del st.session_state['conversation_ended']
 
-# Updated Function to clear vector store
-# Updated Function to clear vector store
+
+# Function to clear vector store
 def clear_vector_store():
     if f'{PAGE_KEY}_vs' in st.session_state:
         vector_store = st.session_state[f'{PAGE_KEY}_vs']
