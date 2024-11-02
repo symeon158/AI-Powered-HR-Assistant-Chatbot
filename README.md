@@ -3,7 +3,6 @@
 Welcome to the **AI-Powered HR Assistant & Chatbot** repository! This project is a comprehensive Streamlit application crafted to assist HR teams in effectively managing and interacting with document data through AI-driven insights and natural language processing (NLP). By combining the capabilities of OpenAI's GPT-4 and LangChain, the assistant provides precise answers to document-specific questions, enhancing productivity and data accessibility.
 
 ## 🎥 Demo Video
-## 🎥 Demo Video
 [![Watch the video](https://via.placeholder.com/800x450.png?text=Watch+Video)](https://1drv.ms/v/c/A9927BE78AA24F21/EYGrivVWTNBCiM-ZpqDzbBIBMs-DgxsIXlGbu-qHDHEWsw?e=IM2PvB))
 > 👉 **Click the image above** to watch the demo video and see how the AI Assistant works
 
