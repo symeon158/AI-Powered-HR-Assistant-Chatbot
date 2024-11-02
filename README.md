@@ -79,3 +79,8 @@ Acknowledgements
 OpenAI: For providing the GPT-4 model, which powers the chatbot and document query functionalities.
 Streamlit: For the framework that enables a fast and interactive UI.
 LangChain: For the tools used in document embedding, chunking, and retrieval.
+
+## Acknowledgements
+OpenAI: For providing the GPT-4 model, which powers the chatbot and document query functionalities.
+Streamlit: For the framework that enables a fast and interactive UI.
+LangChain: For the tools used in document embedding, chunking, and retrieval.
