@@ -165,11 +165,12 @@ def load_document(file_path):
 
 # Function to chunk data
 def chunk_data(data, chunk_size=512, chunk_overlap=50):
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
-    text_splitter = RecursiveCharacterTextSplitter(
+    #from langchain.text_splitter import RecursiveCharacterTextSplitter
+    from langchain.text_splitter import TokenTextSplitter
+    text_splitter = TokenTextSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
-        separators=["\n\n", "\n", " ", ""]
+        #separators=["\n\n", "\n", " ", ""]
     )
     chunks = text_splitter.split_documents(data)
     return chunks
@@ -217,8 +218,8 @@ def clear_history():
     if 'conversation_ended' in st.session_state:
         del st.session_state['conversation_ended']
 
-
-# Function to clear vector store
+# Updated Function to clear vector store
+# Updated Function to clear vector store
 def clear_vector_store():
     if f'{PAGE_KEY}_vs' in st.session_state:
         vector_store = st.session_state[f'{PAGE_KEY}_vs']
@@ -298,7 +299,7 @@ def main():
             st.stop()
 
         # Model Selection
-        model_name = st.selectbox('Choose a model:', ['gpt-3.5-turbo', 'gpt-4'])
+        model_name = st.selectbox('Choose a model:', ['gpt-3.5-turbo', 'gpt-4', 'gpt-4o'])
         temperature = st.slider('Temperature:', min_value=0.0, max_value=1.0, value=0.7)
         max_tokens = st.number_input('Max Tokens:', min_value=100, max_value=2048, value=1500)
 
