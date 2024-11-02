@@ -48,7 +48,7 @@ To set up the project locally, follow these steps:
    git clone https://github.com/symeon158/ai-hr-assistant-chatbot.git
    cd ai-hr-assistant-chatbot
 
-Install dependencies: Make sure you have Python installed. Then, install the required packages:
+Install dependencies: Make sure you have Python installed. Then, install the required packages!
 
 ## Usage
 Upload a Document: Use the sidebar to upload your PDF, DOCX, or TXT file.
